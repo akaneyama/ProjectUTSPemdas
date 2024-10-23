@@ -1,0 +1,49 @@
+﻿<Page x:Class="projectutstoko.TransaksiDetail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projectutstoko"
+      mc:Ignorable="d" 
+      d:DesignHeight="532" d:DesignWidth="1055"
+      Title="TransaksiDetail">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+      
+        <Label Content="View Transaksi" FontSize="24" FontWeight="Bold" Foreground="Black" Margin="10,10,0,20" HorizontalAlignment="Left"/>
+
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" Margin="0,10,0,20">
+            <Label Content="Nama Admin:" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtFilterAdmin" Width="150" Margin="0,0,20,0"/>
+
+            <Label Content="Nama Produk:" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtFilterProduk" Width="150" Margin="0,0,20,0"/>
+
+            <Label Content="Jumlah Transaksi:" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtFilterJumlah" Width="100" Text="10" Margin="0,0,20,0"/>
+
+            <Button Content="Terapkan Filter" Click="TerapkanFilter_Click" Background="#1F78B4" Foreground="White" Padding="10"/>
+        </StackPanel>
+
+        <DataGrid x:Name="DataGridTransaksiView" Grid.Row="2" AutoGenerateColumns="False" Margin="10,0,10,10" 
+                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#ECECEC"
+                  AlternatingRowBackground="#F0F0F0" GridLinesVisibility="Horizontal" RowHeight="40" 
+                  ColumnHeaderHeight="40" BorderThickness="1" BorderBrush="#CCCCCC" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nama Admin" Binding="{Binding nama_admin}" Width="2*"/>
+                <DataGridTextColumn Header="Nama Produk" Binding="{Binding nama_produk}" Width="2*"/>
+                <DataGridTextColumn Header="ID Transaksi" Binding="{Binding id_transaksi}" Width="1*"/>
+                <DataGridTextColumn Header="Jumlah Pembelian" Binding="{Binding jumlah_produk}" Width="1.5*"/>
+                <DataGridTextColumn Header="Harga Produk" Binding="{Binding harga_produk}" Width="1.5*"/>
+                <DataGridTextColumn Header="Subtotal" Binding="{Binding subtotal}" Width="1.5*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

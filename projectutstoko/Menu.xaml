@@ -1,0 +1,99 @@
+﻿<Window x:Class="projectutstoko.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projectutstoko"
+        mc:Ignorable="d"
+        Title="Menu" Height="666" Width="1249" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#007ACC" Height="50">
+           
+            <TextBlock Text= "{x:Static local:LoginForm.nama_admin}"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       FontSize="19"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="0,0,20,0"/>
+        </Grid>
+
+        <StackPanel Background="#007ACC" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <TextBlock Text="Main Menu"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,20,0,30"/>
+            <Button Content="Admin" 
+                    Width="160" 
+                    Height="40" 
+                    Background="White" 
+                    Foreground="#007ACC" 
+                    FontWeight="Bold" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10"
+                    Click="AdminButton_Click"/>
+            <Button Content="Pelanggan" 
+                    Width="160" 
+                    Height="40" 
+                    Background="White" 
+                    Foreground="#007ACC" 
+                    FontWeight="Bold" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10"
+                    Click="PelangganButton_Click"/>
+            <Button Content="Produk" 
+                    Width="160" 
+                    Height="40" 
+                    Background="White" 
+                    Foreground="#007ACC" 
+                    FontWeight="Bold" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10"
+                    Click="ProdukButton_Click"/>
+            <Button Content="Transaksi" 
+                    Width="160" 
+                    Height="40" 
+                    Background="White" 
+                    Foreground="#007ACC" 
+                    FontWeight="Bold" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10"
+                    Click="TransaksiButton_Click"/>
+            <Button Content="Transaksi detail" 
+        Width="160" 
+        Height="40" 
+        Background="White" 
+        Foreground="#007ACC" 
+        FontWeight="Bold" 
+        HorizontalAlignment="Center" 
+        Margin="0,10"
+        Click="TransaksiDetButton_Click"/>
+            <Button Content="Exit" 
+         Width="160" 
+         Height="40" 
+         Background="White" 
+         Foreground="#007ACC" 
+         FontWeight="Bold" 
+         HorizontalAlignment="Center" 
+         Margin="0,10"
+         Click="ExitButton_Click"/>
+        </StackPanel>
+
+        <Frame x:Name="MainContentFrame" Grid.Column="1" Grid.Row="1"
+               HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

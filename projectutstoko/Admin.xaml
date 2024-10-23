@@ -1,0 +1,56 @@
+﻿<Page x:Class="projectutstoko.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projectutstoko"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Admin">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Daftar Admin" FontSize="24" FontWeight="Bold" Foreground="black" Margin="10,10,0,20" HorizontalAlignment="Left"/>
+        <DataGrid x:Name="DataGridAdmin" Grid.Row="1" AutoGenerateColumns="False" Margin="10,0,10,10" 
+                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionChanged="DataGridAdmin_SelectionChanged"
+                  Background="#ECECEC" AlternatingRowBackground="#F0F0F0" GridLinesVisibility="Horizontal" RowHeight="40" 
+                  ColumnHeaderHeight="40" BorderThickness="1" BorderBrush="#CCCCCC" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nama Admin" Binding="{Binding nama_admin}" Width="1.5*"/>
+                <DataGridTextColumn Header="Telp Admin" Binding="{Binding telp_admin}" Width="*"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="10,0,15,0" VerticalAlignment="Top" Width="250">
+            <Label Content="ID Admin:" Foreground="black"/>
+            <TextBox x:Name="txtIdAdmin" IsEnabled="False" Height="20" IsReadOnly="True" Background="#ECECEC" Foreground="Black" Margin="0,0,0,10" FontSize="15"/>
+
+            <Label Content="Nama Admin:" Foreground="black"/>
+            <TextBox x:Name="txtNamaAdmin" Background="#ECECEC" FontSize="15"  Height="20" Foreground="Black" Margin="0,0,0,10"/>
+
+            <Label Content="No Telp:" Foreground="black"/>
+            <TextBox x:Name="txtTelpAdmin" Background="#ECECEC" Height="20" FontSize="15" Foreground="Black" Margin="0,0,0,10"/>
+
+            <Label Content="Username:" Foreground="black"/>
+            <TextBox x:Name="txtUsername" Background="#ECECEC"  Height="20" FontSize="15" Foreground="Black" Margin="0,0,0,10"/>
+
+            <Label Content="Password:" Foreground="black"/>
+            <PasswordBox x:Name="txtPassword" Background="#ECECEC" Height="20" FontSize="15" Foreground="Black" Margin="0,0,0,10"/>
+
+            <Button Content="Tambah Admin" Width="150" Margin="10,10,0,0" Background="#1F78B4" Foreground="White" Padding="10" BorderThickness="0" 
+                    Click="TambahAdmin_Click"/>
+            <Button Content="Update Admin" Width="150" Margin="10,10,0,0" Background="#1F78B4" Foreground="White" Padding="10" BorderThickness="0" 
+                   Click="UpdateAdmin_Click"/>
+            <Button Content="Hapus Admin" Width="150" Margin="10,10,0,0" Background="#1F78B4" Foreground="White" Padding="10" BorderThickness="0" 
+                     Click="HapusAdmin_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
